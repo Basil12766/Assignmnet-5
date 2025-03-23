@@ -37,7 +37,11 @@ const Site = sequelize.define('Site', {
 
 Site.belongsTo(ProvinceOrTerritory, { foreignKey: 'provinceOrTerritoryCode' });
 
-module.exports.initialize = () => sequelize.sync();
+module.exports.initialize = () => {
+  return sequelize.sync()
+    .then(() => console.log("Database connected successfully!"))
+    .catch(err => console.log("Database connection error:", err));
+};
 
 module.exports.getAllSites = () => {
   return Site.findAll({ include: ProvinceOrTerritory });
