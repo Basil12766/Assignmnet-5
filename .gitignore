@@ -1,0 +1,4 @@
+DB_USER="neondb_owner"
+DB_PASSWORD="npg_0qQC1hJIePxv"
+DB_HOST="ep-aged-cloud-a5f17hsi-pooler.us-east-2.aws.neon.tech"
+DB_DATABASE="neondb"
