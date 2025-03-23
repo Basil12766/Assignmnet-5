@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/main.css" rel="stylesheet">
+    <title>Home - Historic Canada</title>
+</head>
+<body class="font-poppins bg-background">
+    <%- include('./partials/navbar', {page:'/'}) %>
+    <section class="relative min-h-screen flex items-center justify-center">
+        <img src="/images/bg.jpg" alt="Background" class="absolute inset-0 w-full h-screen object-cover opacity-50 -z-10">
+        <div class="relative z-10 text-center bg-black bg-opacity-70 p-10 rounded-xl max-w-3xl mx-auto border-4 border-secondary">
+            <h1 class="text-5xl font-bold text-primary">Explore Canada's Historic Landmarks 🇨🇦</h1>
+            <p class="text-lg text-accent">Discover Canada's rich heritage and explore remarkable sites across the country.</p>
+            <a href="/sites" class="btn bg-secondary hover:bg-primary text-white text-lg px-5 py-3 rounded-lg transition">View Site Collection</a>
+        </div>
+    </section>
+</body>
+</html>

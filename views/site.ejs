@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/main.css" rel="stylesheet">
+    <title><%= site.site %> | Historic Canada</title>
+</head>
+<body class="bg-background font-poppins">
+    <%- include('./partials/navbar.ejs', {page: ''}) %>
+
+    <div class="container mx-auto py-10 px-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-4xl mx-auto p-6 border-4 border-primary">
+            <img src="<%= site.image %>" alt="<%= site.site %>" class="w-48 h-32 object-cover mx-auto rounded-lg border-2 border-secondary">
+            <h1 class="text-4xl font-bold text-primary text-center mt-4"><%= site.site %></h1>
+            <p class="text-accent"><strong>Date:</strong> <%= site.date %> (<%= site.dateType %>)</p>
+            <p class="text-secondary"><strong>Location:</strong> <%= site.location %>, <%= site.ProvinceOrTerritory.name %></p>
+            <p class="text-primary"><strong>Region:</strong> <%= site.ProvinceOrTerritory.region %></p>
+            <p class="text-secondary"><strong>Designated:</strong> <%= site.designated %></p>
+            <p class="italic text-gray-600 mt-4 text-center" id="quote"></p>
+            <a href="#" onclick="history.back();" class="btn bg-secondary text-white hover:bg-primary mt-4">← Back</a>
+        </div>
+    </div>
+</body>
+</html>

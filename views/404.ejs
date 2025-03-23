@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/main.css" rel="stylesheet">
+    <title>404 - Page Not Found</title>
+</head>
+<body class="bg-gray-100 font-poppins">
+    <%- include('./partials/navbar', {page: ''}) %>
+    <div class="text-center py-20">
+        <h1 class="text-5xl font-bold">404 Error</h1>
+        <p class="mt-4 text-lg"><%=message%></p>
+        <a href="/" class="btn btn-secondary mt-5">Go Home</a>
+    </div>
+</body>
+</html>

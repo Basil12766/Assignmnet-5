@@ -1,0 +1,42 @@
+[
+    {
+      "siteId": "AB001",
+      "site": "Banff National Park",
+      "description": "Canada’s first national park, Banff is located in Alberta's Rocky Mountains.",
+      "date": 1885,
+      "dateType": "Year",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Moraine_Lake_17092005.jpg/640px-Moraine_Lake_17092005.jpg",
+      "location": "Alberta",
+      "latitude": 51.4968,
+      "longitude": -115.9281,
+      "designated": 1984,
+      "provinceOrTerritoryCode": "AB"
+    },
+    {
+      "siteId": "ON001",
+      "site": "Rideau Canal",
+      "description": "A historic waterway connecting Ottawa to Lake Ontario.",
+      "date": 1832,
+      "dateType": "Year",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Rideau_Canal_in_Winter.jpg",
+      "location": "Ontario",
+      "latitude": 45.4215,
+      "longitude": -75.6992,
+      "designated": 1925,
+      "provinceOrTerritoryCode": "ON"
+    },
+    {
+      "siteId": "BC001",
+      "site": "Gulf of Georgia Cannery",
+      "description": "Historic salmon cannery located in Steveston, British Columbia.",
+      "date": 1894,
+      "dateType": "Year",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/Gulf_of_Georgia_Cannery.jpg",
+      "location": "British Columbia",
+      "latitude": 49.1244,
+      "longitude": -123.1833,
+      "designated": 1971,
+      "provinceOrTerritoryCode": "BC"
+    }
+  ]
+  

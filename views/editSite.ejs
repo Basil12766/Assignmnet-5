@@ -1,0 +1,36 @@
+<%- include('partials/navbar', { page: '' }) %>
+
+<section class="hero py-10">
+  <div class="hero-content flex-col lg:flex-row">
+    <div>
+      <h1 class="text-3xl font-bold mb-5">Edit Site: <%= site.site %></h1>
+
+      <form action="/editSite" method="POST" class="space-y-4">
+
+        <input name="siteId" type="text" value="<%= site.siteId %>" readonly class="input input-bordered w-full cursor-not-allowed bg-gray-100" />
+        <input name="site" type="text" value="<%= site.site %>" class="input input-bordered w-full" required />
+        <input name="image" type="url" value="<%= site.image %>" class="input input-bordered w-full" required />
+        <input name="date" type="number" value="<%= site.date %>" class="input input-bordered w-full" required />
+        <input name="dateType" type="text" value="<%= site.dateType %>" class="input input-bordered w-full" required />
+        <input name="designated" type="number" value="<%= site.designated %>" class="input input-bordered w-full" required />
+        <input name="location" type="text" value="<%= site.location %>" class="input input-bordered w-full" required />
+
+        <select name="provinceOrTerritoryCode" class="select select-bordered w-full" required>
+          <% provincesAndTerritories.forEach(p => { %>
+            <option value="<%= p.code %>" <%= (site.provinceOrTerritoryCode === p.code) ? 'selected' : '' %>>
+              <%= p.name %>
+            </option>
+          <% }) %>
+        </select>
+
+        <textarea name="description" class="textarea textarea-bordered w-full"><%= site.description %></textarea>
+        <input name="latitude" type="number" step="0.00000001" value="<%= site.latitude %>" class="input input-bordered w-full" required />
+        <input name="longitude" type="number" step="0.00000001" value="<%= site.longitude %>" class="input input-bordered w-full" required />
+
+        <button type="submit" class="btn btn-success w-full">Update Site</button>
+      </form>
+
+      <a href="/deleteSite/<%= site.siteId %>" class="btn btn-error mt-4 w-full">Delete Site</a>
+    </div>
+  </div>
+</section>

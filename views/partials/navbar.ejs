@@ -1,0 +1,23 @@
+<div class="navbar bg-navbar shadow-lg py-4 px-6">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-white flex items-center">
+        <span>National Historic Sites</span>
+        <span class="ml-2">🇨🇦</span>
+      </a>
+      <ul class="flex space-x-6">
+        <li>
+          <a class="<%= page == '/' ? 'text-accent font-bold' : 'text-white' %>" href="/">Home</a>
+        </li>
+        <li>
+          <a class="<%= page == '/sites' ? 'text-accent font-bold' : 'text-white' %>" href="/sites">View Site Collection</a>
+        </li>
+        <li>
+          <a class="<%= page == '/addSite' ? 'text-accent font-bold' : 'text-white' %>" href="/addSite">Add to Collection</a>
+        </li>
+        <li>
+          <a class="<%= page == '/about' ? 'text-accent font-bold' : 'text-white' %>" href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

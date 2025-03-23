@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/main.css" rel="stylesheet">
+    <script defer src="/js/main.js"></script>
+    <title>Historic Sites - Canada</title>
+</head>
+<body class="bg-gray-100 font-poppins fade-in">
+    <%- include('./partials/navbar', {page: '/sites'}) %>
+
+    <div class="container mx-auto py-10 px-6">
+        <h1 class="text-5xl font-bold text-primary text-center mb-6">
+            Explore Canada's National Historic Sites
+            <span class="text-base text-primary">(<%= sites.length %> sites)</span>
+        </h1>
+        <p class="text-lg text-gray-600 text-center mb-10">
+            Browse through some of Canada's most remarkable historic locations across the provinces and territories.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="flex justify-center mb-6">
+            <input type="text" id="search-sites" placeholder="Search historic sites..." 
+                class="border border-gray-300 p-3 w-full max-w-lg rounded-lg text-lg shadow-md focus:ring-2 focus:ring-primary">
+        </div>
+
+        <!-- Province Sections -->
+        <% const groupedSites = {}; %>
+        <% sites.forEach(site => { %>
+            <% if (!groupedSites[site.ProvinceOrTerritory.name]) { %>
+                <h2 class="text-3xl font-bold text-accent mt-10"><%= site.ProvinceOrTerritory.name %></h2>
+                <p class="text-gray-600 text-md mb-4"><%= site.ProvinceOrTerritory.description || "" %></p>
+                <% groupedSites[site.ProvinceOrTerritory.name] = true; %>
+            <% } %>
+
+            <!-- Grid Layout for Cards -->
+            <div class="bg-white shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 site-card mb-6">
+                <img src="<%= site.image %>" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-2 site-name"><%= site.site %></h2>
+                    <p class="text-gray-600 text-sm mb-1"><strong>Date:</strong> <%= site.date %> (<%= site.dateType %>)</p>
+                    <p class="text-gray-600 text-sm mb-1"><strong>Location:</strong> <%= site.location %>, <%= site.ProvinceOrTerritory.name %></p>
+                    <p class="text-gray-600 text-sm mb-1"><strong>Region:</strong> <%= site.ProvinceOrTerritory.region %></p>
+                    <p class="text-gray-600 text-sm mb-1"><strong>Designated:</strong> <%= site.designated %></p>
+                    <p class="text-gray-600 text-sm mb-1">
+                        <strong>Is World Heritage Site:</strong> 
+                        <%= site.worldHeritageSite ? '✅ Yes' : '❌ No' %>
+                    </p>
+                    <p class="text-gray-500 text-sm mt-2"><%= site.description %></p>
+
+                    <div class="mt-4 flex justify-end space-x-2">
+                        <a href="/sites/<%= site.siteId %>" class="btn btn-primary">View</a>
+                        <a href="/editSite/<%= site.siteId %>" class="btn btn-success">Edit</a>
+                        <a href="/deleteSite/<%= site.siteId %>" class="btn btn-error"
+                           onclick="return confirm('Are you sure you want to delete this site?');">Delete</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
